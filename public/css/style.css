@@ -1,9 +1,16 @@
+@font-face {
+  font-family: 'Alliance No.1';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/fonts/Alliance.woff') format('woff');
+}
+
 body,
 html {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Alliance No.1";
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
-  color: #777;
+  color: #0A060E;
   font-weight: 400;
   width: 100% !important;
   height: 100% !important;
@@ -36,19 +43,23 @@ h5 {
   line-height: 20px;
 }
 p {
-  font-size: 15px;
+  font-size: 1rem;
 }
 p.intro {
   margin: 12px 0 0;
-  line-height: 24px;
+  line-height: 1.5rem;
 }
 a {
   color: #608dfd;
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  font-style: normal;
+  letter-spacing: 0.3px;
 }
 a:hover,
 a:focus {
-  text-decoration: none;
+  text-decoration: none!important;
   color: #608dfd;
 }
 ul,
@@ -70,22 +81,52 @@ hr {
   margin-bottom: 20px;
   border: 0;
 }
+
+input {
+  padding: 8px 12px;
+  height: 48px;
+  width: 384px;
+  border-radius: 8px;
+}
+.v-center {
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+.color-blue {
+  color: #6309FF;
+}
 /* Navigation */
 #menu {
   padding: 15px;
   transition: all 0.8s;
+  height: 72px;
+  opacity: 0.8;
+  background-color: #fff;
+  backdrop-filter: blur(20px);;
+  font-size: 24px;
+  line-height: 32px;
+  font-style: normal;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+}
+#menu .container {
+  display: flex;
+  justify-content: space-between;
 }
 #menu.navbar-default {
   background-color: #fff;
-  border-color: rgba(231, 231, 231, 0);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 #menu a.navbar-brand {
-  font-family: "Raleway", sans-serif;
   font-size: 24px;
-  font-weight: 700;
+  line-height: 32px;
+  font-weight: 800;
   color: #333;
-  text-transform: uppercase;
+  display: flex;
+}
+#menu a.navbar-brand .app-logo {
+  height: 36px;
 }
 #menu.navbar-default .navbar-nav > li > a {
   font-family: "Lato", sans-serif;
@@ -163,28 +204,21 @@ hr {
   font-size: 18px;
 }
 .btn-custom {
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: #5ca9fb;
-  background-image: linear-gradient(to right, #5ca9fb 0%, #6372ff 100%);
-  padding: 14px 34px;
-  letter-spacing: 1px;
+  color: #fff!important;
+  background-color: #6309FF!important;
+  padding: 0.5px 2rem!important;
   margin: 0;
-  font-size: 15px;
-  font-weight: 500;
-  border-radius: 25px;
-  transition: all 0.5s linear;
-  border: 0;
+  font-style: normal;
+  font-weight: 600!important;
+  font-size: 1.125rem!important;
+  line-height: 2rem!important;
+  height: 3rem!important;
+  letter-spacing: 0.3px!important;
+  border-radius: 0.5rem!important;
+  border: 0!important;
 }
-.btn-custom:hover,
-.btn-custom:focus,
-.btn-custom.focus,
-.btn-custom:active,
-.btn-custom.active {
-  color: #fff;
-  background-image: none;
-  background-color: #6372ff;
+.btn-custom:hover {
+  opacity: 0.8!important;
 }
 .btn:active,
 .btn.active {
@@ -203,63 +237,121 @@ a:focus,
   outline: none;
   outline-offset: none;
 }
-/* Header Section */
+/* welcome Section */
+#welcome {
+  background: url('../img/welcome_bg.png') no-repeat;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+  margin-top: 72px;
+  height: 36.44vw;
+}
 .intro {
   display: table;
   width: 100%;
   padding: 0;
-  background: url(../img/intro-bg.jpg) center center no-repeat;
-  background-color: #e5e5e5;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
 }
-.intro .overlay {
-  background: rgba(0, 0, 0, 0.2);
-}
+
 .intro h1 {
-  font-family: "Raleway", sans-serif;
-  color: #fff;
-  font-size: 82px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-.intro h1 span {
+  font-style: normal;
   font-weight: 800;
-  color: #5ca9fb;
+  font-size: 5rem;
+  line-height: 4rem;
+  margin-top: 0;
+  letter-spacing: -0.4px;
 }
+
 .intro p {
-  color: #fff;
-  font-size: 22px;
-  font-weight: 300;
-  line-height: 30px;
-  margin: 0 auto;
-  margin-bottom: 60px;
+  width: 55vw;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  text-align: center;
+  margin: auto;
+  letter-spacing: 0.1px;
 }
-header .intro-text {
-  padding-top: 350px;
-  padding-bottom: 200px;
+#welcome .intro-text {
+  padding-top: 10rem;
   text-align: center;
 }
-/* Features Section */
-#features {
-  background: #f6f6f6;
+#welcome .intro-text h3 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.2px;
 }
-#features i.fa {
-  font-size: 38px;
-  margin-bottom: 20px;
-  transition: all 0.5s;
-  color: #fff;
-  width: 100px;
-  height: 100px;
-  padding: 30px 0;
-  border-radius: 50%;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+/* job Section */
+#job {
+  background: #fff;
+  padding: 5.5rem 0;
+  height: 44.45vw;
 }
+
+#job .title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 36px;
+  letter-spacing: 0.2px
+}
+
+#job .section-option .title {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+#job .section-option .opt {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 0.2px;
+  color: #0A060E;
+}
+#job .section-option .opt.active {
+  color: #6309FF;
+}
+#job .section-content .input-group {
+  width: 400px;
+  height: 3rem;
+  border: 1px solid #6309FF;
+  border-radius: 0.5rem;
+  margin: auto;
+}
+#job .section-content .input-group .form-control {
+  height: 100%;
+  border: 0;
+  color: #0A060E;
+}
+#job .section-content .input-group .form-control:focus {
+  border: 0;
+}
+#job .section-content .referal-link {
+  margin-top: 64px;
+}
+#job .section-content .form-control.referal-btn {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.3px;
+}
+#job .section-details p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0.1px;
+  color: #0A060E;
+}
+#job .job-status {
+  width: 288px;
+}
+
 /* About Section */
 #about {
   padding: 100px 0;
@@ -458,24 +550,42 @@ header .intro-text {
   color: #888;
 }
 /* Contact Section */
-#contact {
-  padding: 100px 0 60px;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
-  color: rgba(255, 255, 255, 0.75);
+#subscribe {
+  height: 36.4vw;
+  padding: 5.4vw 0;
+  background: url('../img/email_subscribe.png') no-repeat;
+  background-size: 100% 100%;
 }
-#contact .section-title {
+#subscribe h1 {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 4rem;
+  letter-spacing: -0.4px;
+}
+#subscribe p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  letter-spacing: 0.1px;
+}
+#subscribe .input-group {
+  width: 400px;
+}
+#subscribe .section-title {
   margin-bottom: 40px;
 }
-#contact .section-title p {
+#subscribe .section-title p {
   font-size: 16px;
 }
-#contact h2 {
+#subscribe h2 {
   color: #fff;
   margin-top: 10px;
   margin-bottom: 15px;
   padding-bottom: 15px;
 }
-#contact .section-title h2::after {
+#subscribe .section-title h2::after {
   position: absolute;
   content: "";
   background: rgba(255, 255, 255, 0.3);
@@ -484,36 +594,34 @@ header .intro-text {
   bottom: 0;
   left: 30px;
 }
-#contact h3 {
+#subscribe h3 {
   color: #fff;
   margin-top: 80px;
   margin-bottom: 25px;
   padding-bottom: 20px;
   font-weight: 400;
 }
-#contact form {
+#subscribe form {
   padding-top: 20px;
 }
-#contact .text-danger {
+#subscribe .text-danger {
   color: #cc0033;
   text-align: left;
 }
-#contact .btn-custom {
-  margin: 30px 0;
-  background: transparent;
-  border: 2px solid #fff;
+#subscribe .btn-custom {
+  width: 12rem;
 }
-#contact .btn-custom:hover {
-  color: #1f386e;
-  background: #fff;
+#subscribe .btn-custom:hover {
+  opacity: 0.8!important;
 }
+
 label {
   font-size: 12px;
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
   float: left;
 }
-#contact .form-control {
+#subscribe .form-control {
   display: block;
   width: 100%;
   padding: 6px 12px;
@@ -530,7 +638,7 @@ label {
   -o-transition: none;
   transition: none;
 }
-#contact .form-control:focus {
+#subscribe .form-control:focus {
   border-color: #999;
   outline: 0;
   -webkit-box-shadow: transparent;
@@ -548,28 +656,28 @@ label {
 .form-control:-ms-input-placeholder {
   color: #777;
 }
-#contact .contact-item {
+#subscribe .contact-item {
   margin: 20px 0;
 }
-#contact .contact-item span {
+#subscribe .contact-item span {
   color: rgba(255, 255, 255, 1);
   margin-bottom: 10px;
   display: block;
 }
-#contact .contact-item i.fa {
+#subscribe .contact-item i.fa {
   margin-right: 10px;
 }
-#contact .social {
+#subscribe .social {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 50px;
   margin-top: 50px;
   text-align: center;
 }
-#contact .social ul li {
+#subscribe .social ul li {
   display: inline-block;
   margin: 0 20px;
 }
-#contact .social i.fa {
+#subscribe .social i.fa {
   font-size: 22px;
   width: 48px;
   height: 48px;
@@ -579,28 +687,42 @@ label {
   border-radius: 50%;
   transition: all 0.3s;
 }
-#contact .social i.fa:hover {
+#subscribe .social i.fa:hover {
   color: #608dfd;
   background: #fff;
 }
 /* Footer Section*/
 #footer {
-  background: #f6f6f6;
-  padding: 30px 0;
+  background: #fff;
+  height: 72px;
+  opacity: 0.8;
 }
 #footer p {
-  color: #888;
+  color: #0A060E;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+}
+#footer p.address {
   font-size: 14px;
-}
-#footer a {
-  color: #608dfd;
-}
-#footer a:hover {
-  border-bottom: 2px solid #608dfd;
+  line-height: 17px;
 }
 
 @media (max-width: 768px) {
   #about img {
     margin: 50px 0;
+  }
+}
+
+@media (min-width: 1800px) {
+  #welcome {
+    max-height: 656px;
+    margin-top: 72px;
+  }  
+  #job {
+    max-height: 800px;
+    padding: 88px 0;
   }
 }

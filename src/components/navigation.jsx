@@ -1,108 +1,50 @@
-import { useSelector, useDispatch } from "react-redux";
-import { signIn } from "../service/base.service";
+import { useSelector, useDispatch } from 'react-redux';
+import { signIn } from '../service/base.service';
+import { PrimaryColor, SecondaryColor } from '../constants';
+import logImg from '../assets/images/app_logo.png';
 
 export const Navigation = () => {
   const dispatch = useDispatch();
   const isAuthed = useSelector((state) => state.auth.isAuthed);
+  const hmtCounts = useSelector((state) => state.hmt.htmCounts);
 
   const handleSignIn = () => {
     signIn().then((res) => {
       if (res) {
         dispatch({
-          type: "AUTH_SIGN_IN",
+          type: 'AUTH_SIGN_IN',
           payload: true,
         });
+        dispatch({
+          type: 'INCREASE_HMT_COUNT',
+          payload: 1,
+        })
       }
     });
   };
 
   const handleLogOut = () => {
     dispatch({
-      type: "AUTH_SIGN_OUT",
+      type: 'AUTH_SIGN_OUT',
       payload: false,
     });
   };
 
   return (
-    <nav id="menu" className="navbar navbar-default navbar-fixed-top">
-      <div className="container">
-        <div className="navbar-header">
-          <button
-            type="button"
-            className="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
-          >
-            {" "}
-            <span className="sr-only">Toggle navigation</span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-          </button>
-          <a className="navbar-brand page-scroll" href="#page-top">
-            React Landing Page
-          </a>{" "}
+    <nav id='menu' className='navbar navbar-default fixed-top mb-0'>
+      <div className='container'>
+        <div className='navbar-header'>
+          <a className='navbar-brand page-scroll no-padding' href='#page-top' style={{ color: SecondaryColor.blue, height:'36px', letterSpacing: '4px' }}>
+            <img className='app-logo mr-3' src={logImg} alt='human-app-log'></img>
+            HUMAN App
+          </a>{' '}
         </div>
-
-        <div
-          className="collapse navbar-collapse"
-          id="bs-example-navbar-collapse-1"
-        >
+        { isAuthed && <div className='hmt-count v-center' style={{color: PrimaryColor.black}}>{hmtCounts} HMT</div> }
+        <div style={{ width: '87px' }}>
           {isAuthed ? (
-            <ul className="nav navbar-nav navbar-right">
-              <li>
-                <a href="#" className="page-scroll">
-                  Features
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="page-scroll">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="page-scroll">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#portfolio" className="page-scroll">
-                  Gallery
-                </a>
-              </li>
-              {/* <li>
-                <a href="#testimonials" className="page-scroll">
-                  Testimonials
-                </a>
-              </li> */}
-              <li>
-                <a href="#team" className="page-scroll">
-                  Team
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="page-scroll">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" onClick={handleLogOut}>
-                  LogOut
-                </a>
-              </li>
-            </ul>
+            <a href='#' onClick={handleLogOut} style={{color: PrimaryColor.black}}>LogOut</a>
           ) : (
-            <ul className="nav navbar-nav navbar-right">
-              <li>
-                <a
-                  href="#features"
-                  className="page-scroll"
-                  onClick={handleSignIn}
-                >
-                  Login
-                </a>
-              </li>
-            </ul>
+            <a href='#' className='page-scroll' onClick={handleSignIn} style={{color: PrimaryColor.black}}>Log in</a>
           )}
         </div>
       </div>
